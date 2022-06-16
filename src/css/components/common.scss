@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    a{
+        text-decoration: none;
+    }
+}
+
+.prime__button {
+    padding: 14px 32px 14px 32px;
+    background: #47CF34;
+    border: 1px solid #47CF34;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: 0.2s;
+    &:hover{
+        background: #30B01E;
+    }
+}

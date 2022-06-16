@@ -1,0 +1,258 @@
+#cube {
+    width: 100%;
+    height: auto;
+
+    .cube-container {
+        margin-top: 110px;
+        max-width: 1200px;
+        height: auto;
+        gap: 50px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .cube-web__line-up {
+            position: absolute;
+            max-width: 60%;
+            padding-right: 60px;
+            top: -15px;
+            left: 235px;
+            z-index: -1;
+        }
+
+        .cube-text {
+            margin-left: 32px;
+            margin-top: 108px;
+            position: relative;
+            .cube-text__line-cube {
+                width: 139px;
+                position: absolute;
+                top: -80px;
+                left: -30px;
+                z-index: -1;
+            }
+
+            .cube-text__first-title {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 44px;
+                line-height: 54px;
+                text-transform: uppercase;
+                color: #282C37;
+                margin-bottom: 4px;
+            }
+
+            .cube-text__second-title {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 37px;
+                text-transform: uppercase;
+                color: #282C37;
+                margin-bottom: 19px;
+            }
+
+            .cube-text__description {
+                max-width: 475px;
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 26px;
+                color: #282C37;
+                margin-bottom: 30px;
+            }
+
+        }
+
+        .cube-img {
+            max-width: 467.8px;
+            max-height: auto;
+            .cube-img__logo {
+                width: 100%;
+                height:auto;
+            }
+        }
+
+        .cube-web__line-bot {
+            position: absolute;
+            max-width: 60%;
+            bottom: -125px;
+            padding-right: 60px;
+            left: 235px;
+            z-index: -1;
+        }
+    }
+
+
+}
+
+
+// .articles {
+//     .articles__card {
+//         .articles__item {
+//             margin-top: 35px;
+//             margin-bottom: 41px;
+//             align-items: center;
+
+//             .article-logo {
+//                 width: 35px;
+//                 height: 38px;
+//             }
+
+//             .article-text {
+//                 margin: 0px;
+//                 font-family: 'Lato';
+//                 font-style: normal;
+//                 font-weight: 400;
+//                 font-size: 18px;
+//                 line-height: 22px;
+//                 color: #282C37;
+//                 transition: 0.2s;
+//                 text-decoration: none;
+
+//                 &:hover {
+//                     color: #5391DC;
+//                     text-decoration: underline;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// #services {
+//     .services__inner {
+//         background: url("../../assets/img/bg-line3.png");
+//         background-repeat: no-repeat;
+//         background-position: left 80px top 0px;
+//         padding: 96px 0px 0px 0px;
+
+//         .services__title {
+//             background: url("../../assets/img/Polygon\ 2.png");
+//             background-repeat: no-repeat;
+//             padding: 37px 0px 37px 56px;
+//             font-family: 'Montserrat';
+//             font-style: normal;
+//             font-weight: 700;
+//             text-transform: uppercase;
+//             font-size: 30px;
+//             line-height: 37px;
+//             color: #282C37;
+//         }
+//     }
+
+//     .services__item {
+//         height: 507px;
+//         padding-left: 15px;
+
+//         .search {
+//             margin-top: 15px;
+//             height: calc(507px - 179px);
+//             width: calc((50% - 7.5px));
+
+//             img {
+//                 margin-bottom: 32px;
+//             }
+//         }
+
+//         .lamp {
+//             height: 164px;
+//         }
+//     }
+
+//     .plan {
+//         img {
+//             margin-bottom: 32px;
+//         }
+//     }
+
+//     .services__item-block {
+//         display: flex;
+//         align-items: center;
+//         background-color: #6CA7EF;
+//         text-align: center;
+//         border-radius: 20px;
+//         height: 100%;
+//         transition: 0.2s;
+
+//         .item-block__inform {
+//             margin: 0 auto;
+
+//             p {
+//                 margin: 0px;
+//                 max-width: 495px;
+//                 font-family: 'Lato';
+//                 font-style: normal;
+//                 font-weight: 400;
+//                 font-size: 18px;
+//                 line-height: 22px;
+//                 color: #FFFFFF;
+//             }
+//         }
+
+//         &:hover {
+//             background: #5391DC;
+//         }
+//     }
+// }
+
+// @media (max-width: 1200px) {
+//     #cube {
+//         .cube__inner {
+//             .cube__inform {
+//                 .cube__title {
+//                     font-size: 40px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 992px) {
+//     #cube {
+//         .cube__inner {
+//             .cube__inform {
+//                 .cube__title {
+//                     font-size: 28px;
+//                     line-height: 34px;
+//                 }
+//                 .cube__subtitle {
+//                     font-size: 18px;
+//                     line-height: 22px;
+//                 }
+//                 .cube__text {
+//                     width: 34vw;
+//                     margin-top: 5px;
+//                     margin-bottom: 32px;
+//                     font-size: 14px;
+//                     line-height: 17px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     #cube {
+//         .cube__inner {
+//             .cube__inform {
+//                 .cube__title {
+//                     font-size: 28px;
+//                 }
+//                 .cube__subtitle {
+//                     font-size: 18px;
+//                     line-height: 22px;
+//                 }
+//                 .cube__text {
+//                     width: 34vw;
+//                     margin-top: 5px;
+//                     margin-bottom: 32px;
+//                     font-size: 14px;
+//                     line-height: 17px;
+//                 }
+//             }
+//         }
+//     }
+// }

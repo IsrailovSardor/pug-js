@@ -1,0 +1,85 @@
+extends ../maket.pug
+
+block content
+    section#cube
+        .container.cube-container
+            img.cube-web__line-up(src="../../assets/img/icons/line-up_web.svg", alt="")
+            .cube-text
+                img.cube-text__line-cube(src="../../assets/img/icons/cube_two.svg", alt="")
+                p.cube-text__first-title Создаем решения
+                p.cube-text__second-title Для роста бизнеса
+                p.cube-text__description На основе анализа данных с алгоритмами реализации
+                button#open-modal.prime__button Обсудить проблему
+            .cube-img
+                img.cube-img__logo(src="../../assets/img/cube.png", alt="")
+            img.cube-web__line-bot(src="../../assets/img/icons/line-bot_web.svg", alt="")
+    //- .articles
+    //-     .container
+    //-         .row
+    //-             .col-1
+    //-             .articles__card.col-10.d-flex.justify-content-between.flex-wrap
+    //-                 .articles__item.col-4.d-flex
+    //-                     .col-3
+    //-                         img.article-logo(src="../../assets/img/icons/logo2.svg", alt="logo")
+    //-                     .col-9
+    //-                         a(href="#") 
+    //-                         a(href="#").article-text Как найти точки роста и определить цели?   
+    //-                 .col-2
+    //-                 .articles__item.col-4.d-flex
+    //-                     .col-3
+    //-                         img.article-logo(src="../../assets/img/icons/logo2.svg", alt="logo")
+    //-                     .col-9
+    //-                         a(href="#").article-text Как избежать проблем на старте нового бизнеса?
+    //-                 .articles__item.col-4.d-flex
+    //-                     .col-3
+    //-                         img.article-logo(src="../../assets/img/icons/logo2.svg", alt="logo")
+    //-                     .col-9
+    //-                         a(href="#").article-text Как увеличить прибыль, управляя ценами?
+    //-                 .col-2
+    //-                 .articles__item.col-4.d-flex
+    //-                     .col-3
+    //-                         img.article-logo(src="../../assets/img/icons/logo2.svg", alt="logo")
+    //-                     .col-9
+    //-                         a(href="#").article-text Как не попасть в "черную дыру" затрат на продвижение?
+    //-             .col-1
+    //- section#services
+    //-     .container-lg
+    //-         .services__inner
+    //-             h2.services__title услуги
+    //-         .services__cards.d-flex
+    //-             .col-4
+    //-                 a.services__item-block(href="./services.html")
+    //-                     .item-block__inform.col-8.plan
+    //-                         img(src="../../assets/img/icons/plan.svg", alt="icon")
+    //-                         p Разрабатываем маркетинг-план: дорожная карта достижения целей
+    //-             .services__item.col-8 
+    //-                 a.services__item-block.col-12.lamp(href="./services.html")
+    //-                     .item-block__inform.col-8.d-flex.justify-content-between.align-items-center
+    //-                         img(src="../../assets/img/icons/lamp.svg", alt="icon")
+    //-                         p Повышаем эффективность продвижения: аудит существующей модели
+    //-                 .d-flex.justify-content-between.col-12
+    //-                     a.services__item-block.search(href="./services.html")
+    //-                         .item-block__inform.col-8
+    //-                             img(src="../../assets/img/icons/search.svg", alt="icon")
+    //-                             p Находим скрытую прибыль: анализ модели ценообразования
+    //-                     a.services__item-block.search(href="./services.html")
+    //-                             .item-block__inform.col-8
+    //-                                 img(src="../../assets/img/icons/startup.svg", alt="icon")
+    //-                                 p Запускаем новый проект: start-up маркетинг
+   
+    section.modal-page.d-none
+        .modal-page__inner
+            img.modal-page__close(src='../../assets/img/icons/close.svg', alt='close')
+            .modal-page__item
+                form#form.modal-page__form(onsubmit='return false;')
+                    h2.modal-page__title Оставьте заявку
+                    div
+                        input.name(type='text', placeholder='Ваше имя', name='name')
+                        p.warning-name-error
+                    div
+                        input.email(type='email', placeholder='Email', name='email')
+                        p.warning-email-error
+                    div 
+                        textarea.big-text(type='text', placeholder='Пожалуйста опишите вашу проблему', name='big-text')
+                        p.warning-big-text-error
+                    input.prime__button.form__button-submit(type='submit' value="отправить")
