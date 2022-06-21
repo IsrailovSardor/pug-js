@@ -166,15 +166,9 @@
     }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .container-menu {
         padding: 17px 4px 0 4px;
-    }
-}
-
-@media (min-width: 768px) {
-    .container-menu {
-        padding: 17px 0 0 0;
     }
 }
 
@@ -184,7 +178,7 @@
         padding: 0;
 
         .container-menu {
-            padding: 17px 0 0 0;
+            padding: 17px 0 22px 0;
         }
 
         .menu {

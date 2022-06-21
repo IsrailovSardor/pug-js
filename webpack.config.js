@@ -40,6 +40,7 @@ module.exports = {
         "./src/pug/pages/main.pug",
         "./src/pug/pages/services.pug",
         "./src/pug/pages/training.pug",
+        "./src/pug/pages/price.pug",
       ],
       options: {
         usePolling: true,
