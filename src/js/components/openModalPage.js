@@ -1,16 +1,44 @@
-import {
-    openForm,
-  } from "./FormValidatingFunction";
+import { Validator } from './falidation'
 function openModalPage() {
-    let openBtn=document.querySelector("#open-modal");
-    let closeBtn=document.querySelector(".modal-page__close");
+    
+let openBtn = document.getElementById("open-modal");
+let closeBtn = document.querySelector(".modal-page__close");
 
-    openBtn.addEventListener("click", ()=>{
-        openForm();
-    })
-    closeBtn.addEventListener("click", ()=>{
-        openForm();
-    })
+openBtn.addEventListener("click", () => {
+    openModal();
+})
+
+closeBtn.addEventListener("click", () => {
+    closeModal();
+})
+
+const openModal = () => {
+    const modal = document.getElementById("modal-order");
+    modal.classList.add("modal-order_open");
+    document.body.classList.add("modal-open");
+};
+
+const closeModal = () => {
+    const modalOrder = document.getElementById("modal-order");
+    document.body.classList.remove("modal-open");
+    modalOrder.classList.remove("modal-order_open");
+    resetState();
+};
+
+
+const form = document.getElementById("modal-order-form");
+
+const resetState = () => {
+    form.reset();
+    Validator.clearErrorsAll();
 }
+
+
+form.onsubmit = (e) => {
+    e.preventDefault();
+    Validator.validate();
+    Validator.setClearErrorsHandlers();
+};
+};
 
 export default openModalPage;

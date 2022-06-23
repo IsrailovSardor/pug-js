@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+@import './components/breadcrumbs.scss';
 @import './components/header.scss';
 @import './components/home.scss';
 @import './components/footer.scss';
@@ -30,8 +33,10 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
-    transition: 0.2s;
+    
     &:hover{
+        transition: 0.2s;
         background: #30B01E;
     }
 }
+

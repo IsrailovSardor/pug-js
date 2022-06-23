@@ -1,214 +1,195 @@
 #price {
-    background: #E5E5E5;
-    padding: 0 15px;
-    .container {
-        max-width: 1440px;
-        margin: auto;
-        .price-ciube-tow {
-            position: absolute;
-            top: 125px;
-            right: 0;
-            z-index: 2;
-        }
-    }
-    .price__wrapper {
-        max-width: 1173px;
-        height: auto;
-        margin: auto;
-        padding-top: 10px;
-        padding-bottom: 70px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        z-index: 3;
-        position: relative;
-        .price-ciube {
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 111px;
-            height: 111px;
-            z-index: -1;
-        }
 
-        .price-block {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: auto;
-            padding: 39px 130px 39px 38px;
-            background: #FFFFFF;
-            box-shadow: 4px 4px 20px rgba(40, 44, 55, 0.2);
-            border-radius: 20px;
-            gap: 55px;
-            .price-block__title {
-                width: 70%;
-                .price-block__title-text {
-                    font-family: 'Montserrat';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 30px;
-                    line-height: 37px;
-                    color: #282C37;
-                    margin: 0;
-                    padding-bottom: 30px;
-                }
 
-                .padding-5 {
-                    padding-bottom: 28px;
-                }
+.block_itemsss {
+    max-width: 1173px;
+    margin: auto;
+    height: auto;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 20px rgba(40, 44, 55, 0.2);
+    border-radius: 20px;
+    padding: 39px 0 39px 26px;
+}
+.price__items {
+    justify-content: center;
+    background-color: blue;
+    margin: auto;
+    margin-top: 20px;
+}
+.col-11 {
+    background-color: red;
+}
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 48.5%;
+    background-color: yellowgreen;
+}
+.col-md-5 {
+    background-color: blue;
+}
+// .col-12 {
+//     flex: 0 0 auto;
+//     width: 100%;
+// background-color: green;
+// }
+.bock {
+    display: flex;
+    gap: 41px;
+    margin-top: 13px;
+    align-items: flex-start;
+    p {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 20px;
+        margin: 0;
+        color: #282C37;
 
-                .padding-4 {
-                    padding-bottom: 25px;
-                }
-
-                .price-block__title-descr {
-                    width: 100%;
-                    font-family: 'Lato';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 18px;
-                    line-height: 22px;
-                    color: #282C37;
-                    margin: 0;
-                    padding-bottom: 5px;
-                }
-
-                .price-block__title-descrs {
-                    font-family: 'Lato';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 18px;
-                    line-height: 22px;
-                    color: #282C37;
-                    margin: 0;
-                    padding-bottom: 31px;
-                }
-
-                .price-block__title-btn {
-                    width: 229px;
-                    height: 48px;
-                    background: #287EE7;
-                    border-radius: 8px;
-                    border: none;
-                    font-family: 'Montserrat';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 16px;
-                    line-height: 20px;
-                    text-transform: uppercase;
-                    color: #FFFFFF;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0 23px 0 23px;
-                    &:hover {
-                        background: #05336c;
-                    }
-                }
-            }
-
-            .price-block__descr {
-                padding-top: 15px;
-                .price-block__descr-block {
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 40px;
-
-                    .descr-block__text {
-                        font-family: 'Lato';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 17px;
-                        line-height: 20px;
-                        color: #282C37;
-                    }
-                }
-            }
-        }
     }
 }
-
-@media (max-width: 576px) {
-    #price {
-        background: #E5E5E5;
-        padding: 0 15px;
-
-        .price__wrapper {
-            .price-block {
-                padding: 10px !important;
-                justify-content: space-between;
-                gap: 30px;
-
-                .price-block__title {
-                    width: 100%;
-
-                    .price-block__title-text {
-                        font-size: 25px;
-                        line-height: 30px;
-                        margin: 0;
-                        padding-bottom: 30px;
-                    }
-
-                    .padding-5 {
-                        padding-bottom: 28px;
-                    }
-
-                    .padding-4 {
-                        padding-bottom: 25px;
-                    }
-
-                    .price-block__title-descr {
-                        font-size: 16px;
-                        line-height: 20px;
-                    }
-
-                    .price-block__title-descrs {
-                        font-size: 16px;
-                        line-height: 20px;
-                        padding-bottom: 31px;
-                    }
-
-                }
-
-                .price-block__descr {
-                    .price-block__descr-block {
-                        gap: 30px;
-
-                        .descr-block__text {
-                            font-size: 16px;
-                            line-height: 20px;
-                        }
-                    }
-                }
-            }
-        }
-    }
+.q {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 30px;
+    color: #282C37;
+    
 }
-@media (max-width: 768px) {
-    #price {
-        .container {
-            .price-ciube-tow {
-               display: none;
-            }
-        }
-        .price__wrapper {
-            .price-ciube {
-               display: none;
-            }
-        }
-    }
+.w {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    margin-bottom: 5px;
+    color: #282C37;
 }
-
-
-@media (max-width: 992px) {
-    #price {
-        .price__wrapper {
-            .price-block {
-                flex-direction: column;
-                padding: 39px 38px 39px 38px;
-            }
-        }
-    }
+.e {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    
+    margin-bottom: 30px;
+    color: #282C37;
+    
 }
+.r {
+    width: 229px;
+height: 48px;
+background: #287EE7;
+border-radius: 8px;
 
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+
+}}
+// @media (max-width: 767.98px) {
+
+//     #price {
+
+
+//         .block_itemsss {
+//             max-width: 1173px;
+//             margin: auto;
+//             height: auto;
+//             background: #FFFFFF;
+//             box-shadow: 4px 4px 20px rgba(40, 44, 55, 0.2);
+//             border-radius: 20px;
+//             padding: 15px 3px;
+//         }
+//         .price__items {
+//             justify-content: center;
+//             margin: auto;
+//             margin-top: 20px;
+//         }
+//         .col-md-6 {
+//             flex: 0 0 auto;
+//             width: 48.5%;
+//             background-color: yellowgreen;
+//         }
+//         .col-md-5 {
+//             background-color: blue;
+//         }
+//         .col-12 {
+//             flex: 0 0 auto;
+//             width: 100%;
+//             background-color: green;
+//         }
+//         .bock {
+//             display: flex;
+//             gap: 41px;
+//             margin-top: 13px;
+//             align-items: flex-start;
+//             p {
+//                 font-family: 'Lato';
+//                 font-style: normal;
+//                 font-weight: 400;
+//                 font-size: 17px;
+//                 line-height: 20px;
+//                 margin: 0;
+//                 color: #282C37;
+        
+//             }
+//         }
+//         .q {
+//             font-family: 'Montserrat';
+//             font-style: normal;
+//             font-weight: 700;
+//             font-size: 30px;
+//             line-height: 37px;
+//             margin-bottom: 30px;
+//             color: #282C37;
+            
+//         }
+//         .w {
+//             font-family: 'Lato';
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 18px;
+//             line-height: 22px;
+//             /* identical to box height */
+//             margin-bottom: 5px;
+//             color: #282C37;
+//         }
+//         .e {
+//             font-family: 'Lato';
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 18px;
+//             line-height: 22px;
+//             /* identical to box height */
+            
+//             margin-bottom: 30px;
+//             color: #282C37;
+            
+//         }
+//         .r {
+//             width: 229px;
+//         height: 48px;
+//         background: #287EE7;
+//         border-radius: 8px;
+        
+//         font-family: 'Montserrat';
+//         font-style: normal;
+//         font-weight: 700;
+//         font-size: 16px;
+//         line-height: 20px;
+//         text-align: center;
+//         text-transform: uppercase;
+//         color: #FFFFFF;
+        
+//         }}
+// }
