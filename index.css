@@ -1,10 +1,10 @@
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/css/main.scss ***!
-  \***********************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
+  \**********************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap);
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[3]!./src/css/main.scss (1) ***!
-  \***************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss (1) ***!
+  \**************************************************************************************************************************************************************************************/
 .breadcrumbs {
   margin: auto;
   max-width: 1200px;
@@ -225,7 +225,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(f4fdf32b9508e6127613.svg);
+  background-image: url(assets/img/icons/two__lines.svg);
   width: 100%;
   height: 100%;
   background-position: 44% 30px;
@@ -367,6 +367,8 @@
   #blue .about__wrapper {
     padding-top: 40px !important;
     padding-bottom: 80px !important;
+  }
+  #blue .about__wrapper {
     position: relative;
     flex-direction: column-reverse;
   }
@@ -388,6 +390,8 @@
   #blue .about__wrapper .text {
     margin-top: 35px !important;
     margin-left: 0px !important;
+  }
+  #blue .about__wrapper .text {
     text-align: center;
   }
   #blue .about__wrapper .text img {
@@ -419,6 +423,9 @@
     margin-bottom: 15px;
   }
   #blue .about__wrapper .text .e {
+    margin-bottom: 25px !important;
+  }
+  #blue .about__wrapper .text .e {
     margin: auto;
     width: 300px;
     font-family: "Lato";
@@ -427,7 +434,6 @@
     font-size: 14px;
     line-height: 17px;
     color: #282C37;
-    margin-bottom: 25px !important;
   }
   #blue .about__wrapper .img {
     text-align: center;
@@ -479,7 +485,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(f4fdf32b9508e6127613.svg);
+    background-image: url(assets/img/icons/two__lines.svg);
     width: 100%;
     height: 100%;
     background-position: 45% 95px;
@@ -583,8 +589,10 @@
 
 @media (max-width: 576px) {
   .footer {
-    height: 120px;
     margin: 0 auto 0 !important;
+  }
+  .footer {
+    height: 120px;
   }
   .footer .footer-container {
     height: 100%;
@@ -606,12 +614,12 @@
 }
 @font-face {
   font-family: "Lato";
-  src: url(b56347b7f25900c4fd4c.ttf) format("truetype"), url(faacec1c82ca10ed3b76.ttf) format("truetype"), url(637ae3cbe5f4341bfb7b.ttf) format("truetype");
+  src: url(assets/fonts/Lato-Medium.ttf) format("truetype"), url(assets/fonts/Lato-Regular.ttf) format("truetype"), url(assets/fonts/Lato-Semibold.ttf) format("truetype");
   font-style: normal;
 }
 @font-face {
   font-family: "Lato italic";
-  src: url(555ca862aca4c09ec360.ttf) format("truetype");
+  src: url(assets/fonts/Lato-Italic.ttf) format("truetype");
   font-style: italic;
 }
 #services {
@@ -651,7 +659,7 @@
 #services .services__description .description-plans .plans-item {
   gap: 41px;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 #services .services__description .description-plans .plans-item img {
   width: 23px;
@@ -737,6 +745,8 @@
   #services .services__second-block .programs-text {
     font-size: 22px !important;
     line-height: 25px !important;
+  }
+  #services .services__second-block .programs-text {
     margin-bottom: 35px;
   }
   #services .services__second-block .services-descr {
@@ -849,7 +859,7 @@
 #training .training__description .description-plans .plans-item {
   gap: 41px;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 #training .training__description .description-plans .plans-item img {
   width: 23px;
@@ -951,8 +961,10 @@
     display: none;
   }
   #training .training__description {
-    margin-top: 10px;
     margin-bottom: 95px !important;
+  }
+  #training .training__description {
+    margin-top: 10px;
   }
   #training .training__description .description-text {
     font-size: 26px !important;
@@ -979,9 +991,11 @@
     margin: 80px 0 0 0 !important;
   }
   #training .training__programs .programs-text {
+    margin-bottom: 30px !important;
+  }
+  #training .training__programs .programs-text {
     font-size: 26px;
     line-height: 30px;
-    margin-bottom: 30px !important;
   }
   #training .training__programs .programs-item {
     margin-bottom: 42px;
@@ -1107,6 +1121,14 @@
   border-radius: 8px;
   padding-left: 21px;
 }
+.services-title__consultation .services-consultation__block .services-consultation__input::-moz-placeholder {
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #9FA7B0;
+}
 .services-title__consultation .services-consultation__block .services-consultation__input::placeholder {
   font-family: "Lato";
   font-style: italic;
@@ -1151,6 +1173,9 @@
   }
   .services-title__consultation .services-consultation__block .services-consultation__input {
     width: 90%;
+  }
+  .services-title__consultation .services-consultation__block .services-consultation__input::-moz-placeholder {
+    font-size: 14px;
   }
   .services-title__consultation .services-consultation__block .services-consultation__input::placeholder {
     font-size: 14px;
@@ -1378,6 +1403,10 @@
   color: #282C37;
 }
 
+.name::-moz-placeholder, .big-text::-moz-placeholder, .email::-moz-placeholder {
+  color: #9FA7B0;
+}
+
 .name::placeholder,
 .big-text::placeholder,
 .email::placeholder {
@@ -1484,3 +1513,5 @@
   transition: 0.2s;
   background: #30B01E;
 }
+
+/*# sourceMappingURL=index.css.map*/

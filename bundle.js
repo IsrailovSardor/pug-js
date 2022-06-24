@@ -1,11 +1,3 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -16,7 +8,9 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://pug/./src/css/main.scss?");
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -26,7 +20,100 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Validator\": () => (/* binding */ Validator)\n/* harmony export */ });\nconst Rule = Object.freeze({\r\n    required: (value) => !value ? \"поля обязательно*\" : \"\",\r\n});\r\n\r\nconst fields = {\r\n    name: {\r\n        elements: {\r\n            input: document.getElementById(\"modal-order-input-name\"),\r\n            status: document.getElementById(\"modal-order-input-name-err\")\r\n        },\r\n        rules: [Rule.required],\r\n        errorText: \"\"\r\n    },\r\n    email: {\r\n        elements: {\r\n            input: document.getElementById(\"modal-order-input-email\"),\r\n            status: document.getElementById(\"modal-order-input-email-err\")\r\n        },\r\n        rules: [Rule.required],\r\n        errorText: \"\"\r\n    },\r\n    issueDescription: {\r\n        elements: {\r\n            input: document.getElementById(\"modal-order-text-issue\"),\r\n            status: document.getElementById(\"modal-order-text-issue-err\")\r\n        },\r\n        rules: [Rule.required],\r\n        errorText: \"\"\r\n    }\r\n};\r\n\r\nconst validateField = (fieldName) => {\r\n    fields[fieldName].errorText = getErrorText(fieldName);\r\n    renderError(fieldName);\r\n};\r\n\r\nconst getErrorText = (fieldName) => {\r\n    const rules = fields[fieldName].rules;\r\n    const value = fields[fieldName].elements.input.value;\r\n\r\n    let errorText = \"\";\r\n\r\n    rules.some(rule => {\r\n        errorText = rule(value);\r\n        return errorText;\r\n    });\r\n\r\n    return errorText;\r\n};\r\n\r\nconst renderError = (fieldName) => {\r\n    const {status, input} = fields[fieldName].elements;\r\n    const {errorText} = fields[fieldName];\r\n\r\n    if (errorText)\r\n        input.classList.add(\"input-field-error\");\r\n    else\r\n        input.classList.remove(\"input-field-error\");\r\n\r\n    status.textContent = errorText;\r\n};\r\n\r\n\r\nconst clearError = (fieldName) => {\r\n    fields[fieldName].errorText = \"\";\r\n    renderError(fieldName);\r\n};\r\n\r\n\r\n\r\n\r\nconst Validator = {\r\n    validate: () => {\r\n        Object.keys(fields).forEach(field => validateField(field));\r\n        return Object.values(fields).every(field => !field.errorText);\r\n    },\r\n    clearErrorsAll: () => {\r\n        Object.keys(fields).forEach(fieldName => clearError(fieldName));\r\n    },\r\n    setClearErrorsHandlers: () => {\r\n        Object.keys(fields)\r\n            .forEach(fieldName => {\r\n                const hndl = () => {\r\n                    clearError(fieldName);\r\n                };\r\n                fields[fieldName].elements.input\r\n                    .addEventListener(\"input\", hndl);\r\n            });\r\n    },\r\n};\n\n//# sourceURL=webpack://pug/./src/js/components/falidation.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Validator": () => (/* binding */ Validator)
+/* harmony export */ });
+const Rule = Object.freeze({
+    required: (value) => !value ? "поля обязательно*" : "",
+});
+
+const fields = {
+    name: {
+        elements: {
+            input: document.getElementById("modal-order-input-name"),
+            status: document.getElementById("modal-order-input-name-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
+    },
+    email: {
+        elements: {
+            input: document.getElementById("modal-order-input-email"),
+            status: document.getElementById("modal-order-input-email-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
+    },
+    issueDescription: {
+        elements: {
+            input: document.getElementById("modal-order-text-issue"),
+            status: document.getElementById("modal-order-text-issue-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
+    }
+};
+
+const validateField = (fieldName) => {
+    fields[fieldName].errorText = getErrorText(fieldName);
+    renderError(fieldName);
+};
+
+const getErrorText = (fieldName) => {
+    const rules = fields[fieldName].rules;
+    const value = fields[fieldName].elements.input.value;
+
+    let errorText = "";
+
+    rules.some(rule => {
+        errorText = rule(value);
+        return errorText;
+    });
+
+    return errorText;
+};
+
+const renderError = (fieldName) => {
+    const {status, input} = fields[fieldName].elements;
+    const {errorText} = fields[fieldName];
+
+    if (errorText)
+        input.classList.add("input-field-error");
+    else
+        input.classList.remove("input-field-error");
+
+    status.textContent = errorText;
+};
+
+
+const clearError = (fieldName) => {
+    fields[fieldName].errorText = "";
+    renderError(fieldName);
+};
+
+
+
+
+const Validator = {
+    validate: () => {
+        Object.keys(fields).forEach(field => validateField(field));
+        return Object.values(fields).every(field => !field.errorText);
+    },
+    clearErrorsAll: () => {
+        Object.keys(fields).forEach(fieldName => clearError(fieldName));
+    },
+    setClearErrorsHandlers: () => {
+        Object.keys(fields)
+            .forEach(fieldName => {
+                const hndl = () => {
+                    clearError(fieldName);
+                };
+                fields[fieldName].elements.input
+                    .addEventListener("input", hndl);
+            });
+    },
+};
 
 /***/ }),
 
@@ -36,7 +123,37 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction getLocation() {\n  const links = document.querySelectorAll(\".menu__link\");\n\n  links.forEach((element) => {\n    console.log(window.location.href);\n    if (element.href == window.location.href) {\n      element.classList.add(\"menu__link--active\");\n    } else {\n      element.classList.remove(\"menu__link--active\");\n    }\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLocation);\n\n\n\n// function getLocation() {\n//   const links = document.querySelectorAll(\".menu__link\");\n//   links.forEach((element) => {\n//     if (element.href == window.location.href) {\n//       element.classList.add(\"menu__link--active\");\n//     }\n//   });\n// }\n\n// export default getLocation;\n\n//# sourceURL=webpack://pug/./src/js/components/getLocation.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getLocation() {
+  const links = document.querySelectorAll(".menu__link");
+
+  links.forEach((element) => {
+    console.log(window.location.href);
+    if (element.href == window.location.href) {
+      element.classList.add("menu__link--active");
+    } else {
+      element.classList.remove("menu__link--active");
+    }
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getLocation);
+
+
+
+// function getLocation() {
+//   const links = document.querySelectorAll(".menu__link");
+//   links.forEach((element) => {
+//     if (element.href == window.location.href) {
+//       element.classList.add("menu__link--active");
+//     }
+//   });
+// }
+
+// export default getLocation;
 
 /***/ }),
 
@@ -46,7 +163,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction toggleMenu(){\n    const menu=document.querySelector(\".mobail-menu\");\n    const burgerBtn=document.querySelector('.burger');\n\n    burgerBtn.classList.toggle(\"active\");\n    menu.classList.toggle(\"mobail-menu--active\");\n}\nfunction openMenu() {\n    const burgerBtn=document.querySelector('.burger');\n    const closeMenu=document.querySelector(\".mobail-menu__close\");\n\n    closeMenu.addEventListener(\"click\", ()=> {\n        toggleMenu();\n    }) \n    burgerBtn.addEventListener(\"click\", ()=> {\n        toggleMenu();\n    }) \n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openMenu);\n\n//# sourceURL=webpack://pug/./src/js/components/openMenu.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function toggleMenu(){
+    const menu=document.querySelector(".mobail-menu");
+    const burgerBtn=document.querySelector('.burger');
+
+    burgerBtn.classList.toggle("active");
+    menu.classList.toggle("mobail-menu--active");
+}
+function openMenu() {
+    const burgerBtn=document.querySelector('.burger');
+    const closeMenu=document.querySelector(".mobail-menu__close");
+
+    closeMenu.addEventListener("click", ()=> {
+        toggleMenu();
+    }) 
+    burgerBtn.addEventListener("click", ()=> {
+        toggleMenu();
+    }) 
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openMenu);
 
 /***/ }),
 
@@ -56,17 +196,56 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _falidation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./falidation */ \"./src/js/components/falidation.js\");\n\nfunction openModalPage() {\n    \nlet openBtn = document.getElementById(\"open-modal\");\nlet closeBtn = document.getElementById(\"modal__close-btn\");\n\nopenBtn.addEventListener(\"click\", () => {\n    openModal();\n})\n\ncloseBtn.addEventListener(\"click\", () => {\n    closeModal();\n})\n\nconst openModal = () => {\n    const modal = document.getElementById(\"modal-order\");\n    modal.classList.add(\"modal-order_open\");\n    document.body.classList.add(\"modal-open\");\n};\n\nconst closeModal = () => {\n    const modalOrder = document.getElementById(\"modal-order\");\n    document.body.classList.remove(\"modal-open\");\n    modalOrder.classList.remove(\"modal-order_open\");\n    resetState();\n};\n\n\nconst form = document.getElementById(\"modal-order-form\");\n\nconst resetState = () => {\n    form.reset();\n    _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();\n}\n\n\nform.onsubmit = (e) => {\n    e.preventDefault();\n    _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.validate();\n    _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.setClearErrorsHandlers();\n};\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openModalPage);\n\n\n//# sourceURL=webpack://pug/./src/js/components/openModalPage.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _falidation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./falidation */ "./src/js/components/falidation.js");
 
-/***/ }),
+function openModalPage() {
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+    let openBtn = document.getElementById("open-modal");
+    let closeBtn = document.getElementById("modal__close-btn");
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/main.scss */ \"./src/css/main.scss\");\n/* harmony import */ var _components_getLocation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/getLocation */ \"./src/js/components/getLocation.js\");\n/* harmony import */ var _components_openMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/openMenu */ \"./src/js/components/openMenu.js\");\n/* harmony import */ var _components_openModalPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/openModalPage */ \"./src/js/components/openModalPage.js\");\n\n\n\n\n(0,_components_openMenu__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\n;(0,_components_openModalPage__WEBPACK_IMPORTED_MODULE_3__[\"default\"])()\n;(0,_components_getLocation__WEBPACK_IMPORTED_MODULE_1__[\"default\"])()\nconst links = document.querySelectorAll('.price__item-btn')\nlinks.forEach(link => link.addEventListener('click', () => {\n  document.location.href = \"http://localhost:4000/training.html\";\n}))\n\n// const link_page = document.querySelector('.training__button')\n// link_page.addEventListener('click', () => {\n//   document.location.href = \"http://localhost:4000/price.html\";\n// })\n\n//# sourceURL=webpack://pug/./src/js/main.js?");
+    openBtn?.addEventListener("click", () => {
+        openModal();
+    })
+
+    closeBtn?.addEventListener("click", () => {
+        closeModal();
+    })
+
+    const openModal = () => {
+        const modal = document.getElementById("modal-order");
+        modal.classList.add("modal-order_open");
+        document.body.classList.add("modal-open");
+    };
+
+    const closeModal = () => {
+        const modalOrder = document.getElementById("modal-order");
+        document.body.classList.remove("modal-open");
+        modalOrder.classList.remove("modal-order_open");
+        resetState();
+    };
+
+
+    const form = document.getElementById("modal-order-form");
+
+    const resetState = () => {
+        form.reset();
+        _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();
+    }
+
+    if (form) 
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.validate();
+            _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.setClearErrorsHandlers();
+        };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openModalPage);
+
 
 /***/ })
 
@@ -126,11 +305,35 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _src_css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../src/css/main.scss */ "./src/css/main.scss");
+/* harmony import */ var _src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../src/js/components/getLocation */ "./src/js/components/getLocation.js");
+/* harmony import */ var _src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../src/js/components/openMenu */ "./src/js/components/openMenu.js");
+/* harmony import */ var _src_js_components_openModalPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/js/components/openModalPage */ "./src/js/components/openModalPage.js");
+
+
+
+
+(0,_src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__["default"])()
+;(0,_src_js_components_openModalPage__WEBPACK_IMPORTED_MODULE_3__["default"])()
+;(0,_src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__["default"])()
+const links = document.querySelectorAll('.price__item-btn')
+links.forEach(link => link.addEventListener('click', () => {
+  document.location.href = "http://localhost:4000/training.html";
+}))
+
+// const link_page = document.querySelector('.training__button')
+// link_page.addEventListener('click', () => {
+//   document.location.href = "http://localhost:4000/price.html";
+// })
+})();
+
 /******/ })()
 ;
+//# sourceMappingURL=bundle.js.map
