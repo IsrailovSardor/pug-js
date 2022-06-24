@@ -74,8 +74,6 @@
 
     .four__wrapper {
         .four__container {
-            margin-bottom: 78px;
-
             .block {
                 margin-bottom: 60px;
                 display: flex;
@@ -104,7 +102,30 @@
     }
 
     .blue__container {
-        margin-top: 85px;
+        padding-top: 85px;
+        margin-bottom: 65px;
+        position: relative;
+        .blue__svg {
+            top: 45px;
+            left: 70px;
+            width: 120px;
+            z-index: -1;
+            height: 120px;
+            position: absolute;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('/src/assets/img/icons/line-serv_web.svg');
+            width: 100%;
+            height: 100%;
+            background-position: 32% -40px;
+            background-repeat: no-repeat;
+            // background-size: 100% 100%;
+            z-index: -1;
+        }
         .blue__text-title {
             font-family: 'Montserrat';
             font-style: normal;
@@ -113,8 +134,9 @@
             line-height: 37px;
             text-transform: uppercase;
             color: #282C37;
-            margin-left: 120px;
+            padding-left: 120px;
             margin-bottom: 85px;
+            width: 100%;
         }
         .block-blue__size {
             background: #6CA7EF;
@@ -134,12 +156,17 @@
                 text-align: center;
                 letter-spacing: 0.01em;
                 color: #FFFFFF;
+                a {
+                    text-decoration: none;
+                    color: #FFFFFF; 
+                    cursor: pointer;
+                }
             }
         }
 
         .block__blue-first {
             height: 507px;
-
+            
             p {
                 max-width: 270px;
             }
@@ -177,7 +204,27 @@
 
     }
 }
+@media (max-width: 575.98px) {
+    .blue__container {
 
+        .block__blue-first,
+        .block__blue-third { 
+            margin-bottom: 15px;
+        }
+        .block__blue-second,
+        .block__blue-first,
+        .block__blue-third,
+        .block__blue-fourth {
+            height: 249px !important;
+            img {
+                width: 68.74px;
+                height: 57.4px;
+            }
+        }
+
+
+    }
+}
 @media (max-width: 767.98px) {
     #blue {
         .about__wrapper {
@@ -259,8 +306,6 @@
 
         .four__wrapper {
             .four__container {
-                margin-bottom: 78px;
-
                 .block {
                     margin-bottom: 25px !important;
                     gap: 29px !important;
@@ -274,6 +319,19 @@
         }
 
         .blue__container {
+            padding-top: 50px !important;
+            &::before {
+               display: none;
+            }
+            .blue__svg {
+                display: none;
+            }
+            .blue__text-title {
+                padding-left: 0 !important;
+                margin-bottom: 20px !important;
+                width: 100%;
+                text-align: center;
+            }
             .block-blue__size {
                 padding: 15px;
 
@@ -287,7 +345,6 @@
                 height: 328px;
                 flex-direction: column;
             }
-
             .block__blue-first,
             .block__blue-third,
             .block__blue-fourth {
@@ -311,20 +368,6 @@
         .about__wrapper {
             padding-top: 105px;
             position: relative;
-    
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-image: url('/src/assets/img/icons/two__lines.svg');
-                width: 100%;
-                height: 100%;
-                background-position: 45% 95px;
-                background-repeat: no-repeat;
-                background-size: 55% 98%;
-                z-index: -1;
-            }
     
             .text {
                 position: relative;
@@ -379,8 +422,6 @@
         }
         .four__wrapper {
             .four__container {
-                margin-bottom: 78px;
-
                 .block {
                     gap: 35px;
                 }

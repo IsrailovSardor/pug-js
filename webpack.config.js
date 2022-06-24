@@ -143,7 +143,7 @@ const devConfig = {
     }
   },
   devServer: {
-    port: 4000,
+    port: 7777,
     static: "./dist",
     hot: true,
     watchFiles: ["./src/index.pug"]

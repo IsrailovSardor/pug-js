@@ -1,4 +1,5 @@
 #price {
+    padding-bottom: 50px;
     .price__items {
         justify-content: center;
         margin: auto;
@@ -14,7 +15,7 @@
 
         .training__cube-img {
             position: absolute;
-            top: -30px;
+            top: -40px;
             left: 40px;
             z-index: 1;
         }

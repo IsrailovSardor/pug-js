@@ -1,16 +1,12 @@
 import '/src/css/main.scss';
 import getLocation from '/src/js/components/getLocation';
 import openMenu from '/src/js/components/openMenu';
-import openModalPage from '/src/js/components/openModalPage';
-openMenu()
-openModalPage()
-getLocation()
-const links = document.querySelectorAll('.price__item-btn')
-links.forEach(link => link.addEventListener('click', () => {
-  document.location.href = "http://localhost:4000/training.html";
-}))
+import { ModalOrder } from './components/modal';
 
-// const link_page = document.querySelector('.training__button')
-// link_page.addEventListener('click', () => {
-//   document.location.href = "http://localhost:4000/price.html";
-// })
+ModalOrder.render();
+
+const btnOpenModal = document.getElementById("open-modal-btn");
+if (btnOpenModal)
+  btnOpenModal.onclick = ModalOrder.openModal;
+openMenu()
+getLocation()

@@ -11,9 +11,11 @@ function openMenu() {
 
     closeMenu.addEventListener("click", ()=> {
         toggleMenu();
+        document.body.style.overflow = "auto"
     }) 
     burgerBtn.addEventListener("click", ()=> {
         toggleMenu();
+        document.body.style.overflow = "hidden"
     }) 
 }
 
