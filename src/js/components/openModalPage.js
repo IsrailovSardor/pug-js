@@ -2,7 +2,7 @@ import { Validator } from './falidation'
 function openModalPage() {
     
 let openBtn = document.getElementById("open-modal");
-let closeBtn = document.querySelector(".modal-page__close");
+let closeBtn = document.getElementById("modal__close-btn");
 
 openBtn.addEventListener("click", () => {
     openModal();

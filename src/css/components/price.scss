@@ -87,7 +87,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
+                &:hover {
+                    background: #003e8a;
+                    transition: 0.2s;
+                }
             }
 
             .price__item-plan {

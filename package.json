@@ -7,29 +7,28 @@
   "license": "ISC",
   "scripts": {
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.js --mode=development",
     "start": "webpack-dev-server --mode development --open"
   },
   "devDependencies": {
-    "@webdiscus/pug-loader": "^2.6.4",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "css-minimizer-webpack-plugin": "^4.0.0",
-    "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
+    "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "image-minimizer-webpack-plugin": "^3.2.3",
     "mini-css-extract-plugin": "^2.6.0",
-    "resolve-url-loader": "^5.0.0",
+    "postcss": "^8.4.14",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.7.1",
+    "pug-html-loader": "^1.1.5",
     "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.9.2",
+    "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
-    "pug": "^3.0.2",
-    "pug-plugin": "^2.7.2",
-    "sass": "^1.52.3"
+    "copy-webpack-plugin": "^11.0.0"
   }
-
 }
