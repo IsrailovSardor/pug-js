@@ -1,5 +1,5 @@
 extends ../maket.pug
-
+include ../mixins/price-card.pug
 block content
     include ../api/json.pug
     section#price
@@ -9,23 +9,10 @@ block content
                 p /
                 p.active Тренинги
             .price__items
-                //- img.training__cube-img(src="../../assets/img/icons/cube_one.svg", alt="")
-                //- img.training__bg-img(src="../../assets/img/services_img.png", alt="")
-                .block_itemsss.row.col-md-12.col-12
-                    .col-12.col-md-6
-                        p.q Бизнес-тренинг «Маркетинг – технология роста»
-                        p.w Для кого: руководители компаний, маркетологи, продавцы
-                        p.e Цели бизнес-тренинга:
-                        button.r Подробнее
-                    .col-12.col-md-5
-                        .bock 
-                            img(src="../../assets/img/icons/logo3.svg", alt="")
-                            p Определение маркетинга как технологии роста
-                        .bock 
-                            img(src="../../assets/img/icons/logo3.svg", alt="")
-                            p Организация маркетинга как сквозного бизнес-процесса
-                        .bock 
-                            img(src="../../assets/img/icons/logo3.svg", alt="")
-                            p Получение практических навыков применения технологии маркетинга
+                img.training__cube-img(src="../../assets/img/icons/cube_one.svg", alt="")
+                img.training__bg-img(src="../../assets/img/services_img.png", alt="")
+                each item in trainings
+                    +priceCard(item)
+                
 
 
