@@ -1,4 +1,4 @@
-extends ../maket.pug
+extends /src/pug/maket.pug
 
 block content
     section#blue 
@@ -18,16 +18,16 @@ block content
             .four__wrapper
                 .row.justify-content-evenly.four__container
                     .col-11.col-md-6.col-lg-5.block
-                        img(src="../../assets/img/icons/logo3.svg", alt="")
+                        img(src="/src/assets/img/icons/logo3.svg", alt="")
                         p.col-xl-8.col-lg-8.col-md-9 Как найти точки роста и определить цели?
                     .col-11.col-md-6.col-lg-4.block
-                        img(src="../../assets/img/icons/logo3.svg", alt="")
+                        img(src="/src/assets/img/icons/logo3.svg", alt="")
                         p.col-xl-8.col-lg-10.col-md-9 Как увеличить прибыль, управляя ценами?
                     .col-11.col-md-6.col-lg-5.block
-                        img(src="../../assets/img/icons/logo3.svg", alt="")
+                        img(src="/src/assets/img/icons/logo3.svg", alt="")
                         p.col-xl-8.col-lg-8.col-md-9 Как избежать проблем на старте нового бизнеса?
                     .col-11.col-md-6.col-lg-4.block
-                        img(src="../../assets/img/icons/logo3.svg", alt="")
+                        img(src="/src/assets/img/icons/logo3.svg", alt="")
                         p.col-xl-10.col-lg-8.col-md-10 Как не попасть в "черную дыру" затрат на продвижение?
             .row.blue__container
                 p.blue__text-title Услуги
@@ -60,7 +60,7 @@ block content
     #modal-order.modal-order
         .modal-order__wrapper
             #modal-order-container.modal-order__container
-                img.modal-page__close#modal__close-btn(src='../../assets/img/icons/close.svg', alt='close')
+                img.modal-page__close#modal__close-btn(src='/src/assets/img/icons/close.svg', alt='close')
                 .modal-page__item
                      form.modal-page__form#modal-order-form
                         h2.modal-page__title Оставьте заявку

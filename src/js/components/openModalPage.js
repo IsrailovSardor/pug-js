@@ -1,44 +1,44 @@
 import { Validator } from './falidation'
 function openModalPage() {
-    
-let openBtn = document.getElementById("open-modal");
-let closeBtn = document.getElementById("modal__close-btn");
 
-openBtn.addEventListener("click", () => {
-    openModal();
-})
+    let openBtn = document.getElementById("open-modal");
+    let closeBtn = document.getElementById("modal__close-btn");
 
-closeBtn.addEventListener("click", () => {
-    closeModal();
-})
+    openBtn?.addEventListener("click", () => {
+        openModal();
+    })
 
-const openModal = () => {
-    const modal = document.getElementById("modal-order");
-    modal.classList.add("modal-order_open");
-    document.body.classList.add("modal-open");
-};
+    closeBtn?.addEventListener("click", () => {
+        closeModal();
+    })
 
-const closeModal = () => {
-    const modalOrder = document.getElementById("modal-order");
-    document.body.classList.remove("modal-open");
-    modalOrder.classList.remove("modal-order_open");
-    resetState();
-};
+    const openModal = () => {
+        const modal = document.getElementById("modal-order");
+        modal.classList.add("modal-order_open");
+        document.body.classList.add("modal-open");
+    };
 
-
-const form = document.getElementById("modal-order-form");
-
-const resetState = () => {
-    form.reset();
-    Validator.clearErrorsAll();
-}
+    const closeModal = () => {
+        const modalOrder = document.getElementById("modal-order");
+        document.body.classList.remove("modal-open");
+        modalOrder.classList.remove("modal-order_open");
+        resetState();
+    };
 
 
-form.onsubmit = (e) => {
-    e.preventDefault();
-    Validator.validate();
-    Validator.setClearErrorsHandlers();
-};
+    const form = document.getElementById("modal-order-form");
+
+    const resetState = () => {
+        form.reset();
+        Validator.clearErrorsAll();
+    }
+
+    if (form) 
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            Validator.validate();
+            Validator.setClearErrorsHandlers();
+        };
 };
 
 export default openModalPage;

@@ -1,7 +1,7 @@
-import '../css/main.scss';
-import getLocation from './components/getLocation';
-import openMenu from './components/openMenu';
-import openModalPage from './components/openModalPage';
+import '/src/css/main.scss';
+import getLocation from '/src/js/components/getLocation';
+import openMenu from '/src/js/components/openMenu';
+import openModalPage from '/src/js/components/openModalPage';
 openMenu()
 openModalPage()
 getLocation()

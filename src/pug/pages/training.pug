@@ -11,22 +11,22 @@ block content
                 p /
                 p.active Бизнес-тренинг «Маркетинг – технология роста»
             .training__description
-                img.training__cube-img(src="../../assets/img/icons/cube_one.svg", alt="")
-                img.training__line-img(src="../../assets/img/icons/train-line.svg", alt="")
-                img.training__bg-img(src="../../assets/img/services_img.png", alt="")
-                img.training__bg-cube(src="../../assets/img/icons/two-cubes.png", alt="")
+                img.training__cube-img(src="/src/assets/img/icons/cube_one.svg", alt="")
+                img.training__line-img(src="/src/assets/img/icons/train-line.svg", alt="")
+                img.training__bg-img(src="/src/assets/img/services_img.png", alt="")
+                img.training__bg-cube(src="/src/assets/img/icons/two-cubes.png", alt="")
                 p.description-text.col-lg-10.col-12 Бизнес-тренинг «Маркетинг – технология роста»
                 p.description-descr Для кого: руководители компаний, маркетологи, продавцы
                 p.description-descrs Цели бизнес-тренинга:
                 .description-plans.col-xl-8
                     .plans-item
-                        img(src="../../assets/img/icons/logo2.svg", alt="icon")
+                        img(src="/src/assets/img/icons/logo2.svg", alt="icon")
                         p Определение маркетинга как технологии роста
                     .plans-item
-                        img(src="../../assets/img/icons/logo2.svg", alt="icon")
+                        img(src="/src/assets/img/icons/logo2.svg", alt="icon")
                         p Организация маркетинга как сквозного бизнес-процесса
                     .plans-item
-                        img(src="../../assets/img/icons/logo2.svg", alt="icon")
+                        img(src="/src/assets/img/icons/logo2.svg", alt="icon")
                         p Получение практических навыков применения технологии маркетинга
                 button.description-button Подробнее
                         span.description-span
@@ -42,4 +42,4 @@ block content
                             ul.programs-ul
                                 each stage in item.stage
                                     +stage(stage)
-            include ../includes/consultation
+            include /src/pug/includes/consultation

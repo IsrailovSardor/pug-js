@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
-@import './components/breadcrumbs.scss';
-@import './components/header.scss';
-@import './components/home.scss';
-@import './components/footer.scss';
-@import './components/fonts/_lato.scss';
-@import './components/services.scss';
-@import './components/training.scss';
-@import './components/consultation.scss';
-@import './components/price.scss';
-@import './components/modalPage.scss';
+@import '/src/css/components/breadcrumbs.scss';
+@import '/src/css/components/header.scss';
+@import '/src/css/components/home.scss';
+@import '/src/css/components/footer.scss';
+@import '/src/css/components/fonts/_lato.scss';
+@import '/src/css/components/services.scss';
+@import '/src/css/components/training.scss';
+@import '/src/css/components/consultation.scss';
+@import '/src/css/components/price.scss';
+@import '/src/css/components/modalPage.scss';
 
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    a{
+
+    a {
         text-decoration: none;
     }
 }
@@ -33,10 +34,9 @@
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
-    
-    &:hover{
+
+    &:hover {
         transition: 0.2s;
         background: #30B01E;
     }
 }
-

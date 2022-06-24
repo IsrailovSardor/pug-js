@@ -1,9 +1,11 @@
 #training {
     background: #E5E5E5;
+
     .training__description {
         margin-top: 10px;
         margin-bottom: 130px;
         position: relative;
+
         .training__bg-img {
             position: absolute;
             top: -80px;
@@ -24,12 +26,14 @@
             right: 10.5%;
             z-index: 1;
         }
+
         .training__bg-cube {
             position: absolute;
             bottom: 730px;
             right: 0;
             z-index: 1;
         }
+
         .description-text {
             font-family: 'Montserrat';
             font-style: normal;
@@ -68,7 +72,7 @@
             .plans-item {
                 gap: 41px;
                 display: flex;
-                align-items: start;
+                align-items: flex-start;
 
                 img {
                     width: 23px;
@@ -208,6 +212,7 @@
 
             .description-plans {
                 margin: 0 0 40px 0 !important;
+
                 .plans-item {
                     gap: 20px;
                 }
@@ -254,7 +259,7 @@
     .training__bg-img,
     .training__bg-cube,
     .training__line-img {
-        display: none ;
+        display: none;
     }
 }
 
