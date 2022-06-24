@@ -97,10 +97,9 @@ const resetState = () => {
 };
 
 const onFormSubmit = (e) => {
-    e.preventDefault(); // прервать перезагрузку страницы
+    e.preventDefault();
     _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();
 
-    // таймаут для анимации мигания перед валидацией
     setTimeout(async () => {
         const isValid = _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.validateAll();
         _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.setClearErrorsHandlers();
@@ -165,9 +164,11 @@ function openMenu() {
 
     closeMenu.addEventListener("click", ()=> {
         toggleMenu();
+        document.body.style.overflow = "auto"
     }) 
     burgerBtn.addEventListener("click", ()=> {
         toggleMenu();
+        document.body.style.overflow = "hidden"
     }) 
 }
 
@@ -356,15 +357,7 @@ if (btnOpenModal)
   btnOpenModal.onclick = _components_modal__WEBPACK_IMPORTED_MODULE_3__.ModalOrder.openModal;
 (0,_src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__["default"])()
 ;(0,_src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__["default"])()
-const links = document.querySelectorAll('.price__item-btn')
-links.forEach(link => link.addEventListener('click', () => {
-  document.location.href = "http://localhost:4000/training.html";
-}))
 
-// const link_page = document.querySelector('.training__button')
-// link_page.addEventListener('click', () => {
-//   document.location.href = "http://localhost:4000/price.html";
-// })
 })();
 
 /******/ })()
