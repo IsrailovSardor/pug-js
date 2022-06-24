@@ -14,109 +14,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/components/falidation.js":
-/*!*****************************************!*\
-  !*** ./src/js/components/falidation.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Validator": () => (/* binding */ Validator)
-/* harmony export */ });
-const Rule = Object.freeze({
-    required: (value) => !value ? "поля обязательно*" : "",
-});
-
-const fields = {
-    name: {
-        elements: {
-            input: document.getElementById("modal-order-input-name"),
-            status: document.getElementById("modal-order-input-name-err")
-        },
-        rules: [Rule.required],
-        errorText: ""
-    },
-    email: {
-        elements: {
-            input: document.getElementById("modal-order-input-email"),
-            status: document.getElementById("modal-order-input-email-err")
-        },
-        rules: [Rule.required],
-        errorText: ""
-    },
-    issueDescription: {
-        elements: {
-            input: document.getElementById("modal-order-text-issue"),
-            status: document.getElementById("modal-order-text-issue-err")
-        },
-        rules: [Rule.required],
-        errorText: ""
-    }
-};
-
-const validateField = (fieldName) => {
-    fields[fieldName].errorText = getErrorText(fieldName);
-    renderError(fieldName);
-};
-
-const getErrorText = (fieldName) => {
-    const rules = fields[fieldName].rules;
-    const value = fields[fieldName].elements.input.value;
-
-    let errorText = "";
-
-    rules.some(rule => {
-        errorText = rule(value);
-        return errorText;
-    });
-
-    return errorText;
-};
-
-const renderError = (fieldName) => {
-    const {status, input} = fields[fieldName].elements;
-    const {errorText} = fields[fieldName];
-
-    if (errorText)
-        input.classList.add("input-field-error");
-    else
-        input.classList.remove("input-field-error");
-
-    status.textContent = errorText;
-};
-
-
-const clearError = (fieldName) => {
-    fields[fieldName].errorText = "";
-    renderError(fieldName);
-};
-
-
-
-
-const Validator = {
-    validate: () => {
-        Object.keys(fields).forEach(field => validateField(field));
-        return Object.values(fields).every(field => !field.errorText);
-    },
-    clearErrorsAll: () => {
-        Object.keys(fields).forEach(fieldName => clearError(fieldName));
-    },
-    setClearErrorsHandlers: () => {
-        Object.keys(fields)
-            .forEach(fieldName => {
-                const hndl = () => {
-                    clearError(fieldName);
-                };
-                fields[fieldName].elements.input
-                    .addEventListener("input", hndl);
-            });
-    },
-};
-
-/***/ }),
-
 /***/ "./src/js/components/getLocation.js":
 /*!******************************************!*\
   !*** ./src/js/components/getLocation.js ***!
@@ -157,6 +54,94 @@ function getLocation() {
 
 /***/ }),
 
+/***/ "./src/js/components/modal.js":
+/*!************************************!*\
+  !*** ./src/js/components/modal.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ModalOrder": () => (/* binding */ ModalOrder)
+/* harmony export */ });
+/* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./validation */ "./src/js/components/validation.js");
+
+
+
+const form = document.getElementById("modal-order-form");
+const btnClose = document.getElementById("modal-order-btn-close");
+const btnSubmit = document.getElementById("modal-order-btn-submit");
+const labelSuccess = document.getElementById("modal-order-label-success");
+
+
+const openModal = () => {
+    const modal = document.getElementById("modal-order");
+    modal.classList.add("modal-order_open");
+    document.body.classList.add("modal-open");
+};
+
+const closeModal = () => {
+    const modalOrder = document.getElementById("modal-order");
+    document.body.classList.remove("modal-open");
+    modalOrder.classList.remove("modal-order_open");
+    resetState();
+};
+
+const resetState = () => {
+    form.reset();
+    _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();
+
+    labelSuccess.style.visibility = "hidden";
+    btnSubmit.innerText = "Отправить";
+    btnSubmit.disabled = false;
+};
+
+const onFormSubmit = (e) => {
+    e.preventDefault(); // прервать перезагрузку страницы
+    _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();
+
+    // таймаут для анимации мигания перед валидацией
+    setTimeout(async () => {
+        const isValid = _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.validateAll();
+        _validation__WEBPACK_IMPORTED_MODULE_0__.Validator.setClearErrorsHandlers();
+
+        if (isValid) {
+            btnSubmit.innerText = "Идет отправка...";
+            btnSubmit.disabled = true;
+            await postFormData();
+
+            resetState();
+            labelSuccess.style.visibility = "visible";
+        }
+    }, 70);
+};
+
+const postFormData = async () => {
+    const formData = {
+        name: form.elements.name.value,
+        email: form.elements.email.value,
+        plan: form.elements.issue.value
+    };
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("Posted Form Data", formData);
+};
+
+
+const render = () => {
+    btnClose.onclick = closeModal;
+    form.onsubmit = onFormSubmit
+};
+
+
+const ModalOrder = {
+    openModal,
+    closeModal,
+    render
+}
+
+/***/ }),
+
 /***/ "./src/js/components/openMenu.js":
 /*!***************************************!*\
   !*** ./src/js/components/openMenu.js ***!
@@ -190,62 +175,105 @@ function openMenu() {
 
 /***/ }),
 
-/***/ "./src/js/components/openModalPage.js":
-/*!********************************************!*\
-  !*** ./src/js/components/openModalPage.js ***!
-  \********************************************/
+/***/ "./src/js/components/validation.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/validation.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Validator": () => (/* binding */ Validator)
 /* harmony export */ });
-/* harmony import */ var _falidation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./falidation */ "./src/js/components/falidation.js");
-
-function openModalPage() {
-
-    let openBtn = document.getElementById("open-modal");
-    let closeBtn = document.getElementById("modal__close-btn");
-
-    openBtn?.addEventListener("click", () => {
-        openModal();
-    })
-
-    closeBtn?.addEventListener("click", () => {
-        closeModal();
-    })
-
-    const openModal = () => {
-        const modal = document.getElementById("modal-order");
-        modal.classList.add("modal-order_open");
-        document.body.classList.add("modal-open");
-    };
-
-    const closeModal = () => {
-        const modalOrder = document.getElementById("modal-order");
-        document.body.classList.remove("modal-open");
-        modalOrder.classList.remove("modal-order_open");
-        resetState();
-    };
+const Rule = Object.freeze({
+    required: (value) => !value ? "поля обязательно*" : "",
+});
 
 
-    const form = document.getElementById("modal-order-form");
-
-    const resetState = () => {
-        form.reset();
-        _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.clearErrorsAll();
+const fields = Object.freeze({
+    name: {
+        elements: {
+            input: document.getElementById("modal-order-input-name"),
+            status: document.getElementById("modal-order-input-name-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
+    },
+    email: {
+        elements: {
+            input: document.getElementById("modal-order-input-email"),
+            status: document.getElementById("modal-order-input-email-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
+    },
+    issueDescription: {
+        elements: {
+            input: document.getElementById("modal-order-text-issue"),
+            status: document.getElementById("modal-order-text-issue-err")
+        },
+        rules: [Rule.required],
+        errorText: ""
     }
+});
 
-    if (form) 
-        form.onsubmit = (e) => {
-            e.preventDefault();
-            _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.validate();
-            _falidation__WEBPACK_IMPORTED_MODULE_0__.Validator.setClearErrorsHandlers();
-        };
+
+
+const validateField = (fieldName) => {
+    fields[fieldName].errorText = getErrorText(fieldName);
+    renderError(fieldName);
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openModalPage);
+const getErrorText = (fieldName) => {
+    const rules = fields[fieldName].rules;
+    const value = fields[fieldName].elements.input.value;
 
+    let errorText = "";
+
+    rules.some(rule => {
+        errorText = rule(value);
+        return errorText;
+    });
+
+    return errorText;
+};
+
+const renderError = (fieldName) => {
+    const {status, input} = fields[fieldName].elements;
+    const {errorText} = fields[fieldName];
+
+    if (errorText)
+        input.classList.add("modal-order__input_error");
+    else
+        input.classList.remove("modal-order__input_error");
+
+    status.textContent = errorText;
+};
+
+const clearError = (fieldName) => {
+    fields[fieldName].errorText = "";
+    renderError(fieldName);
+};
+
+
+const Validator = {
+    validateAll: () => {
+        Object.keys(fields).forEach(field => validateField(field));
+        return Object.values(fields).every(field => !field.errorText);
+    },
+
+    clearErrorsAll: () => {
+        Object.keys(fields).forEach(fieldName => clearError(fieldName));
+    },
+
+    setClearErrorsHandlers: () => {
+        Object.keys(fields)
+            .forEach(fieldName => {
+                fields[fieldName].elements.input
+                    .addEventListener("input", () => clearError(fieldName));
+            });
+    },
+};
 
 /***/ })
 
@@ -315,13 +343,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../src/css/main.scss */ "./src/css/main.scss");
 /* harmony import */ var _src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../src/js/components/getLocation */ "./src/js/components/getLocation.js");
 /* harmony import */ var _src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../src/js/components/openMenu */ "./src/js/components/openMenu.js");
-/* harmony import */ var _src_js_components_openModalPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../src/js/components/openModalPage */ "./src/js/components/openModalPage.js");
+/* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/modal */ "./src/js/components/modal.js");
 
 
 
 
+
+_components_modal__WEBPACK_IMPORTED_MODULE_3__.ModalOrder.render();
+
+const btnOpenModal = document.getElementById("open-modal-btn");
+if (btnOpenModal)
+  btnOpenModal.onclick = _components_modal__WEBPACK_IMPORTED_MODULE_3__.ModalOrder.openModal;
 (0,_src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__["default"])()
-;(0,_src_js_components_openModalPage__WEBPACK_IMPORTED_MODULE_3__["default"])()
 ;(0,_src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__["default"])()
 const links = document.querySelectorAll('.price__item-btn')
 links.forEach(link => link.addEventListener('click', () => {

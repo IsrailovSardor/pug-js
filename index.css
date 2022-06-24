@@ -302,6 +302,21 @@
 }
 #blue .blue__container {
   margin-top: 85px;
+  margin-bottom: 65px;
+  position: relative;
+}
+#blue .blue__container .blue__svg {
+  top: -40px;
+  left: 70px;
+  width: 120px;
+  height: 120px;
+  z-index: -1;
+  position: absolute;
+}
+#blue .blue__container .blue__line {
+  top: -40px;
+  left: 70px;
+  position: absolute;
 }
 #blue .blue__container .blue__text-title {
   font-family: "Montserrat";
@@ -311,8 +326,9 @@
   line-height: 37px;
   text-transform: uppercase;
   color: #282C37;
-  margin-left: 120px;
+  padding-left: 120px;
   margin-bottom: 85px;
+  width: 100%;
 }
 #blue .blue__container .block-blue__size {
   background: #6CA7EF;
