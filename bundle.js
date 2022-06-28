@@ -128,8 +128,8 @@ const postFormData = async () => {
 
 
 const render = () => {
-    btnClose.onclick = closeModal;
-    form.onsubmit = onFormSubmit
+    btnClose?.addEventListener('click', closeModal)
+    form?.addEventListener('submit',onFormSubmit)
 };
 
 
@@ -341,9 +341,9 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _src_css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../src/css/main.scss */ "./src/css/main.scss");
-/* harmony import */ var _src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../src/js/components/getLocation */ "./src/js/components/getLocation.js");
-/* harmony import */ var _src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../src/js/components/openMenu */ "./src/js/components/openMenu.js");
+/* harmony import */ var _src_css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../src/css/main.scss */ "./src/css/main.scss");
+/* harmony import */ var _src_js_components_getLocation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../src/js/components/getLocation */ "./src/js/components/getLocation.js");
+/* harmony import */ var _src_js_components_openMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../src/js/components/openMenu */ "./src/js/components/openMenu.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/modal */ "./src/js/components/modal.js");
 
 
