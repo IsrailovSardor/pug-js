@@ -3,6 +3,8 @@ include ../mixins/stages.pug
 block content
     include ../api/json.pug
     section#training
+        img.training__bg-img(src="/src/assets/img/services_img.png", alt="")
+        img.training__bg-cube(src="/src/assets/img/icons/two-cubes.png", alt="")
         .container
             .breadcrumbs
                 a(href='./') Главный  
@@ -13,8 +15,6 @@ block content
             .training__description
                 img.training__cube-img(src="/src/assets/img/icons/cube_one.svg", alt="")
                 img.training__line-img(src="/src/assets/img/icons/train-line.svg", alt="")
-                img.training__bg-img(src="/src/assets/img/services_img.png", alt="")
-                img.training__bg-cube(src="/src/assets/img/icons/two-cubes.png", alt="")
                 p.description-text.col-lg-10.col-12 Бизнес-тренинг «Маркетинг – технология роста»
                 p.description-descr Для кого: руководители компаний, маркетологи, продавцы
                 p.description-descrs Цели бизнес-тренинга:

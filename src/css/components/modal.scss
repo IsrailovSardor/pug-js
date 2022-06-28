@@ -4,7 +4,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     overflow: scroll;
     visibility: hidden;
     background: rgba(0, 0, 0, .5);
@@ -73,7 +73,7 @@
 
         &::placeholder {
             font-style: italic;
-            color: black;
+            color: #9FA7B0;
         }
     }
 
@@ -128,7 +128,7 @@
             font-weight: 700;
             font-size: 18px;
             line-height: 22px;
-            text-transform: uppercase;
+            text-align: center;
             color: #30B01E;
         }
     }
@@ -144,7 +144,7 @@
 
 @media (max-width: 530px) {
     .modal-order {
-        z-index: 10;
+        z-index: 100;
         &__wrapper {
             height: 100%;
             width: 100%;

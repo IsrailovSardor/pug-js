@@ -1,6 +1,12 @@
 #services {
-    background: #E5E5E5;
-
+    position: relative;
+    .training__bg-img {
+        position: absolute;
+        top: 60px;
+        overflow: hidden;
+        right: 0;
+        z-index: 1;
+    }
     .services__description {
         margin-top: 10px;
         margin-bottom: 0;

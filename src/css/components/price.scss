@@ -1,17 +1,19 @@
 #price {
     padding-bottom: 50px;
+    position: relative;
+    .training__bg-img {
+        position: absolute;
+        top: 60px;
+        overflow: hidden;
+        right: 0;
+        z-index: 1;
+    }
     .price__items {
         justify-content: center;
         margin: auto;
         margin-top: 20px;
         position: relative;
 
-        .training__bg-img {
-            position: absolute;
-            top: -80px;
-            right: 0;
-            z-index: 1;
-        }
 
         .training__cube-img {
             position: absolute;
@@ -36,12 +38,6 @@
                 flex: 0 0 auto;
                 width: 48.5%;
             }
-
-            // .col-12 {
-            //     flex: 0 0 auto;
-            //     width: 100%;
-            // background-color: green;
-            // }
 
             .price__item-title {
                 max-width: 503px;

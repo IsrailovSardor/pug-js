@@ -4,6 +4,7 @@ include ../mixins/servicesMix.pug
 block content
     include ../api/json.pug
     section#services
+        img.training__bg-img(src="/src/assets/img/services_img.png", alt="")
         .container 
             .breadcrumbs
                 a(href='./') Главный  
@@ -13,7 +14,6 @@ block content
                 p.active Разрабатываем маркетинг-план: дорожная карта достижения целей
             .services__description
                 img.training__cube-img(src="/src/assets/img/icons/cube_one.svg", alt="")
-                img.training__bg-img(src="/src/assets/img/services_img.png", alt="")
                 p.description-text.col-lg-10.col-12 Разрабатываем маркетинг-план: дорожная карта достижения целей
                 .description-plans.col-xl-8
                     .plans-item

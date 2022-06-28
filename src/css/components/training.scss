@@ -1,17 +1,25 @@
 #training {
-    background: #E5E5E5;
-
+    position: relative;
+    .training__bg-img {
+        position: absolute;
+        top: 60px;
+        overflow: hidden;
+        right: 0;
+        z-index: 1;
+    }
+    .training__bg-cube {
+        position: absolute;
+        bottom: 730px;
+        overflow: hidden;
+        right: 0;
+        z-index: 1;
+    }
     .training__description {
         margin-top: 10px;
         margin-bottom: 130px;
         position: relative;
 
-        .training__bg-img {
-            position: absolute;
-            top: -80px;
-            right: 0;
-            z-index: 1;
-        }
+       
 
         .training__cube-img {
             position: absolute;
@@ -27,12 +35,7 @@
             z-index: 1;
         }
 
-        .training__bg-cube {
-            position: absolute;
-            bottom: 730px;
-            right: 0;
-            z-index: 1;
-        }
+       
 
         .description-text {
             font-family: 'Montserrat';
@@ -253,7 +256,7 @@
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1000.98px) {
 
     .training__cube-img,
     .training__bg-img,

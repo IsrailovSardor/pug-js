@@ -1,4 +1,4 @@
-import {Validator} from "./validation";
+import { Validator } from "./validation";
 
 
 const form = document.getElementById("modal-order-form");
@@ -61,8 +61,8 @@ const postFormData = async () => {
 
 
 const render = () => {
-    btnClose.onclick = closeModal;
-    form.onsubmit = onFormSubmit
+    btnClose?.addEventListener('click', closeModal)
+    form?.addEventListener('submit',onFormSubmit)
 };
 
 
